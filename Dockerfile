@@ -13,4 +13,4 @@ COPY config.py .
 COPY application application
 
 
-CMD [ "python", "wsgi.py" ]
+CMD ["gunicorn", "wsgi:app", "--bind", "0.0.0.0:5000"]
